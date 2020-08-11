@@ -1,0 +1,19 @@
+version: "3"
+services:
+  client:
+    build: client/
+    ports:
+      - "3000:3000"
+    networks:
+      - myapp
+
+  api:
+    build: api/
+    ports:
+      - "8080:8080"
+    networks:
+      - myapp
+
+networks:
+  myapp:
+    driver: bridge
